@@ -3,5 +3,8 @@ Minor Project
 
 #Python
 #addressbook_weatherApp
-
+Sanwaya Datta
+Sanjana Mondal
+Priyanka Saha
+Suman Kanrar
 
