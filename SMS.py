@@ -7,5 +7,6 @@ auth_token = "f8c22ad19cb744fd5b36e835c983211d"
 client = Client(account_sid, auth_token)
 
 
-message = client.messages.create(body="Hello Everybody!!!",to="+918013120648",from_="+19124175695")   #text message
+message = client.messages.create(body="Hello Everybody!!!",to="+918013120648",from_="+19124175695")
+#text message
 print message.sid
