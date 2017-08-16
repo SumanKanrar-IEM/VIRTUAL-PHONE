@@ -91,3 +91,4 @@ class Ui_Dialog(object):
         self.pushButton_3.setText(_translate("Dialog", "E-mail"))
         self.commandLinkButton.setText(_translate("Dialog", "Add Contact"))
 
+
