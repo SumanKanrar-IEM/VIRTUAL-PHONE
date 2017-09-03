@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'project.ui'
 #
-# Created by: PyQt5 UI code generator 5.9
+# Created by: PyQt5 UI code generator 5.6
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -13,8 +13,9 @@ class Ui_Dialog(object):
         Dialog.setObjectName("Dialog")
         Dialog.resize(363, 440)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../Pictures/Feedback/{4AE122AA-3DEE-4204-9588-9FCAC4BAEA3D}/Capture001.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("./GUI Samples/phonebook.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         Dialog.setWindowIcon(icon)
+        Dialog.setAutoFillBackground(False)
         Dialog.setSizeGripEnabled(False)
         self.label = QtWidgets.QLabel(Dialog)
         self.label.setGeometry(QtCore.QRect(20, 30, 341, 91))
@@ -83,7 +84,7 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        Dialog.setWindowTitle(_translate("Dialog", "Phone Book"))
         self.label.setText(_translate("Dialog", "Address Book"))
         self.label_2.setText(_translate("Dialog", "Select Contact:"))
         self.pushButton.setText(_translate("Dialog", "Call"))

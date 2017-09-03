@@ -11,11 +11,14 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Phone Book</string>
   </property>
   <property name="windowIcon">
    <iconset>
     <normaloff>../Pictures/Feedback/{4AE122AA-3DEE-4204-9588-9FCAC4BAEA3D}/Capture001.png</normaloff>../Pictures/Feedback/{4AE122AA-3DEE-4204-9588-9FCAC4BAEA3D}/Capture001.png</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
   </property>
   <property name="sizeGripEnabled">
    <bool>false</bool>
