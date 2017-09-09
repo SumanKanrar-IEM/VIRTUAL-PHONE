@@ -12,7 +12,6 @@ class Notepad(QWidget):
         self.clr_btn = QPushButton('Clear')
         self.sav_btn = QPushButton('Save')
         self.opn_btn = QPushButton('Open')
-        
 
         self.init_ui()
 
@@ -32,7 +31,7 @@ class Notepad(QWidget):
         self.opn_btn.clicked.connect(self.open_text)
 
         self.setLayout(v_layout)
-        self.setWindowTitle('PyQt5 TextEdit')
+        self.setWindowTitle("notepad")
 
         self.show()
 
@@ -82,7 +81,7 @@ class Writer(QMainWindow):
 
         quit_action.triggered.connect(self.quit_trigger)
         file.triggered.connect(self.respond)
-
+        self.setWindowTitle("Notepad")
         self.show()
 
     def quit_trigger(self):
