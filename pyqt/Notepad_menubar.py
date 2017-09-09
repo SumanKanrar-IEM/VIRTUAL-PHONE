@@ -12,6 +12,7 @@ class Notepad(QWidget):
         self.clr_btn = QPushButton('Clear')
         self.sav_btn = QPushButton('Save')
         self.opn_btn = QPushButton('Open')
+        
 
         self.init_ui()
 
