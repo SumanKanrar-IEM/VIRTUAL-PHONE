@@ -32,6 +32,7 @@ class Notepad(QWidget):
 
         self.setLayout(v_layout)
         self.setWindowTitle("notepad")
+        
 
         self.show()
 
