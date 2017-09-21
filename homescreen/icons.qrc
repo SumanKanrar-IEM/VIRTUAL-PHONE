@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/new">
+        <file>256-256-64273d52c282e3b26d2d0968d08b9d8d.png</file>
+        <file>abstract-2289505_960_720.jpg</file>
+        <file>browser-icon.png</file>
+        <file>calculator-flat.png</file>
+        <file>Circle-icons-contacts.svg.png</file>
+        <file>cloud.png</file>
+        <file>light-backgrounds-related-keywords-suggestions-light-backgrounds-lighting-background-l-76edaab432453c3b.jpg</file>
+        <file>note-icon-flat_20610.png</file>
+    </qresource>
+</RCC>
