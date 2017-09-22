@@ -6,28 +6,28 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>336</width>
-    <height>475</height>
+    <width>431</width>
+    <height>668</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/new/light-backgrounds-related-keywords-suggestions-light-backgrounds-lighting-background-l-76edaab432453c3b.jpg);</string>
+   <string notr="true">background-image: url(:/new1/background.jpg);</string>
   </property>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>80</y>
-     <width>81</width>
-     <height>71</height>
+     <y>90</y>
+     <width>93</width>
+     <height>91</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">image: url(:/new/256-256-64273d52c282e3b26d2d0968d08b9d8d.png);
-</string>
+    <string notr="true">image: url(:/new1/calender.png);
+background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 255), stop:0.19397 rgba(0, 0, 0, 255), stop:0.202312 rgba(122, 97, 0, 255), stop:0.495514 rgba(76, 58, 0, 255), stop:0.504819 rgba(255, 255, 255, 255), stop:0.79 rgba(255, 255, 255, 255), stop:1 rgba(255, 158, 158, 255));</string>
    </property>
    <property name="text">
     <string/>
@@ -36,14 +36,15 @@
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>80</y>
-     <width>81</width>
-     <height>71</height>
+     <x>280</x>
+     <y>90</y>
+     <width>93</width>
+     <height>91</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">image: url(:/new/Circle-icons-contacts.svg.png);</string>
+    <string notr="true">image: url(:/new1/calculator.png);
+background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 255), stop:0.19397 rgba(0, 0, 0, 255), stop:0.202312 rgba(122, 97, 0, 255), stop:0.495514 rgba(76, 58, 0, 255), stop:0.504819 rgba(255, 255, 255, 255), stop:0.79 rgba(255, 255, 255, 255), stop:1 rgba(255, 158, 158, 255));</string>
    </property>
    <property name="text">
     <string/>
@@ -52,14 +53,15 @@
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>190</y>
-     <width>81</width>
-     <height>71</height>
+     <x>280</x>
+     <y>290</y>
+     <width>93</width>
+     <height>91</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">image: url(:/new/browser-icon.png);</string>
+    <string notr="true">image: url(:/new1/phonebook.png);
+background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 255), stop:0.19397 rgba(0, 0, 0, 255), stop:0.202312 rgba(122, 97, 0, 255), stop:0.495514 rgba(76, 58, 0, 255), stop:0.504819 rgba(255, 255, 255, 255), stop:0.79 rgba(255, 255, 255, 255), stop:1 rgba(255, 158, 158, 255));</string>
    </property>
    <property name="text">
     <string/>
@@ -68,14 +70,16 @@
   <widget class="QPushButton" name="pushButton_4">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>320</y>
-     <width>81</width>
-     <height>71</height>
+     <x>60</x>
+     <y>290</y>
+     <width>93</width>
+     <height>91</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">image: url(:/new/cloud.png);</string>
+    <string notr="true">image: url(:/new1/browser.png);
+border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 178, 102, 255), stop:0.55 rgba(235, 148, 61, 255), stop:0.98 rgba(0, 0, 0, 255), stop:1 rgba(0, 0, 0, 0));
+background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 255), stop:0.19397 rgba(0, 0, 0, 255), stop:0.202312 rgba(122, 97, 0, 255), stop:0.495514 rgba(76, 58, 0, 255), stop:0.504819 rgba(255, 255, 255, 255), stop:0.79 rgba(255, 255, 255, 255), stop:1 rgba(255, 158, 158, 255));</string>
    </property>
    <property name="text">
     <string/>
@@ -84,14 +88,15 @@
   <widget class="QPushButton" name="pushButton_5">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>320</y>
-     <width>81</width>
-     <height>71</height>
+     <x>280</x>
+     <y>500</y>
+     <width>93</width>
+     <height>91</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">image: url(:/new/note-icon-flat_20610.png);</string>
+    <string notr="true">image: url(:/new1/cloud.png);
+background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 255), stop:0.19397 rgba(0, 0, 0, 255), stop:0.202312 rgba(122, 97, 0, 255), stop:0.495514 rgba(76, 58, 0, 255), stop:0.504819 rgba(255, 255, 255, 255), stop:0.79 rgba(255, 255, 255, 255), stop:1 rgba(255, 158, 158, 255));</string>
    </property>
    <property name="text">
     <string/>
@@ -100,20 +105,23 @@
   <widget class="QPushButton" name="pushButton_6">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>190</y>
-     <width>81</width>
-     <height>71</height>
+     <x>60</x>
+     <y>500</y>
+     <width>93</width>
+     <height>91</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">image: url(:/new/calculator-flat.png);</string>
+    <string notr="true">image: url(:/new1/notepad.png);
+background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 255), stop:0.19397 rgba(0, 0, 0, 255), stop:0.202312 rgba(122, 97, 0, 255), stop:0.495514 rgba(76, 58, 0, 255), stop:0.504819 rgba(255, 255, 255, 255), stop:0.79 rgba(255, 255, 255, 255), stop:1 rgba(255, 158, 158, 255));</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="icons_real.qrc"/>
+ </resources>
  <connections/>
 </ui>

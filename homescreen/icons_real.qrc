@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="/new1">
+    <file>background.jpg</file>
+    <file>browser.png</file>
+    <file>calculator.png</file>
+    <file>calender.png</file>
+    <file>cloud.png</file>
+    <file>notepad.png</file>
+    <file>phonebook.png</file>
+  </qresource>
+</RCC>

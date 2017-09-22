@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import icons.qrc
+#import icons.qrc
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
