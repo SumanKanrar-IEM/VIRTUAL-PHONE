@@ -58,7 +58,7 @@ class Ui_Dialog(object):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
 
-import icons_real_qrc
+#import icons_real_qrc
 
 if __name__ == "__main__":
     import sys
