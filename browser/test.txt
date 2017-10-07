@@ -1,1 +1,12 @@
-asdadad
+git status
+
+git add .
+git commit -m  "Commit message"
+git push address master
+
+
+username
+pass
+
+
+
