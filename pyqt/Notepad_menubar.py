@@ -1,7 +1,8 @@
 import os
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QWidget
+from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QWidget, QFontDialog
 from PyQt5.QtWidgets import QTextEdit, QPushButton, QVBoxLayout, QHBoxLayout, QAction, qApp
+from PyQt5.QtGui import QFont
 
 
 class Notepad(QWidget):
@@ -12,6 +13,7 @@ class Notepad(QWidget):
         self.clr_btn = QPushButton('Clear')
         self.sav_btn = QPushButton('Save')
         self.opn_btn = QPushButton('Open')
+        self.font_btn = QPushButton('Change Font')
 
         self.init_ui()
 
@@ -32,7 +34,8 @@ class Notepad(QWidget):
 
         self.setLayout(v_layout)
         self.setWindowTitle("notepad")
-        
+
+
 
         self.show()
 
@@ -64,6 +67,7 @@ class Writer(QMainWindow):
     def init_ui(self):
         bar = self.menuBar()
         file = bar.addMenu('File')
+        edit = bar.addMenu('Edit')
 
         new_action = QAction('New', self)
         new_action.setShortcut('Ctrl+N')
@@ -75,13 +79,17 @@ class Writer(QMainWindow):
 
         quit_action = QAction('&Quit', self)
 
+        font_action = QAction('&Font', self)
+
         file.addAction(new_action)
         file.addAction(save_action)
         file.addAction(open_action)
         file.addAction(quit_action)
+        edit.addAction(font_action)
 
         quit_action.triggered.connect(self.quit_trigger)
         file.triggered.connect(self.respond)
+        font_action.triggered.connect(self.font_changer1)
         self.setWindowTitle("Notepad")
         self.show()
 
@@ -97,6 +105,14 @@ class Writer(QMainWindow):
             self.form_widget.open_text()
         elif signal == '&Save':
             self.form_widget.save_text()
+
+
+    def font_changer1(self):
+        font, ok = QFontDialog.getFont()
+        if ok:
+            self.form_widget.text.setFont(font)
+
+
 
 
 app = QApplication(sys.argv)
