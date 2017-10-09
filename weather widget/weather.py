@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'widget.ui'
+# Form implementation generated from reading ui file 'weather_widget.ui'
 #
 # Created by: PyQt5 UI code generator 5.6
 #
@@ -12,6 +12,8 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(429, 200)
+        Form.setMinimumSize(QtCore.QSize(429, 200))
+        Form.setMaximumSize(QtCore.QSize(429, 200))
         Form.setStyleSheet("background-color: qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:0, stop:0.4375 rgba(14, 212, 95, 255), stop:1 rgba(255, 255, 255, 255));")
         self.frame = QtWidgets.QFrame(Form)
         self.frame.setGeometry(QtCore.QRect(20, 20, 391, 151))
@@ -20,27 +22,32 @@ class Ui_Form(object):
         self.frame.setObjectName("frame")
         self.label = QtWidgets.QLabel(self.frame)
         self.label.setGeometry(QtCore.QRect(11, 21, 58, 18))
+        self.label.setMinimumSize(QtCore.QSize(58, 18))
         self.label.setStyleSheet("background-color: none;\n"
 "font: 75 11pt \"MS Shell Dlg 2\";\n"
 "")
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.frame)
         self.label_2.setGeometry(QtCore.QRect(11, 45, 91, 18))
+        self.label_2.setMinimumSize(QtCore.QSize(91, 18))
         self.label_2.setStyleSheet("background-color: none;\n"
 "font: 75 11pt \"MS Shell Dlg 2\";")
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(self.frame)
         self.label_3.setGeometry(QtCore.QRect(11, 69, 63, 18))
+        self.label_3.setMinimumSize(QtCore.QSize(63, 18))
         self.label_3.setStyleSheet("background-color: none;\n"
 "font: 75 11pt \"MS Shell Dlg 2\";")
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(self.frame)
         self.label_4.setGeometry(QtCore.QRect(11, 93, 61, 18))
+        self.label_4.setMinimumSize(QtCore.QSize(61, 18))
         self.label_4.setStyleSheet("background-color: none;\n"
 "font: 75 11pt \"MS Shell Dlg 2\";")
         self.label_4.setObjectName("label_4")
         self.label_5 = QtWidgets.QLabel(self.frame)
         self.label_5.setGeometry(QtCore.QRect(11, 117, 37, 18))
+        self.label_5.setMinimumSize(QtCore.QSize(37, 18))
         self.label_5.setStyleSheet("background-color: none;\n"
 "font: 75 11pt \"MS Shell Dlg 2\";")
         self.label_5.setObjectName("label_5")
@@ -76,9 +83,10 @@ class Ui_Form(object):
         self.label_9.setObjectName("label_9")
         self.label_10 = QtWidgets.QLabel(self.frame)
         self.label_10.setGeometry(QtCore.QRect(250, 10, 121, 121))
+        self.label_10.setMinimumSize(QtCore.QSize(121, 121))
         self.label_10.setStyleSheet("background-color: none;")
         self.label_10.setText("")
-        self.label_10.setPixmap(QtGui.QPixmap("rsz_1status-weather-clear-icon.png"))
+        self.label_10.setPixmap(QtGui.QPixmap("sunny.png"))
         self.label_10.setObjectName("label_10")
         self.label_11.raise_()
         self.label.raise_()
