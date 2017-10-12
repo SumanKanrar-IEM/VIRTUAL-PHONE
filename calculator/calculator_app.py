@@ -1,7 +1,6 @@
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
 import calculator_ui
-
 class Calculator_class(calculator_ui.Ui_MainWindow, QtWidgets.QMainWindow):
 
     def __init__(self):
@@ -55,6 +54,8 @@ class Calculator_class(calculator_ui.Ui_MainWindow, QtWidgets.QMainWindow):
         val2 = float(screen_value[2])
         result = self.maths(val1, val2, operator)
         self.screen.setText(str(result))
+
+
 
 
 
