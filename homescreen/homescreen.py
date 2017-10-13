@@ -13,7 +13,7 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(431, 668)
-        Dialog.setStyleSheet("background-image: url(back.png);")
+        Dialog.setStyleSheet("background-image: url(background.png);")
 
         
         self.pushButton = QtWidgets.QPushButton(Dialog)
