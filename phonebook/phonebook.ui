@@ -25,7 +25,7 @@
      <x>10</x>
      <y>130</y>
      <width>721</width>
-     <height>471</height>
+     <height>451</height>
     </rect>
    </property>
    <property name="autoFillBackground">
@@ -35,7 +35,7 @@
     <string notr="true">font: 75 italic 10pt &quot;Comic Sans MS&quot;;</string>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab_contacts">
     <attribute name="title">
@@ -133,20 +133,16 @@ background-color:qconicalgradient(cx:0.943, cy:0.505682, angle:0, stop:0 rgba(13
     <attribute name="title">
      <string>     MMS    </string>
     </attribute>
-    <widget class="QTableView" name="tableView_mms">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>20</y>
-       <width>361</width>
-       <height>331</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QTableView" name="tableView_mms">
+       <property name="styleSheet">
+        <string notr="true">
 background-color:qconicalgradient(cx:0.943, cy:0.505682, angle:0, stop:0 rgba(136, 106, 22, 255), stop:0.113636 rgba(166, 140, 41, 255), stop:0.285 rgba(204, 181, 74, 255), stop:0.345 rgba(235, 219, 102, 255), stop:0.420455 rgba(245, 236, 112, 255), stop:0.505682 rgba(209, 190, 76, 255), stop:0.573864 rgba(187, 156, 51, 255), stop:0.619318 rgba(168, 142, 42, 255), stop:0.681818 rgba(202, 174, 68, 255), stop:0.693182 rgba(218, 202, 86, 255), stop:0.815 rgba(208, 187, 73, 255), stop:0.88 rgba(187, 156, 51, 255), stop:0.935 rgba(137, 108, 26, 255), stop:1 rgba(35, 40, 3, 255))</string>
-     </property>
-    </widget>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
    <widget class="QWidget" name="tab_email">
     <attribute name="title">
