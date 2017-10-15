@@ -24,6 +24,25 @@ class Calculator_class(calculator_ui.Ui_MainWindow, QtWidgets.QMainWindow):
         self.btn_multiply.clicked.connect(lambda: self.display_screen(' * '))
         self.btn_divide.clicked.connect(lambda: self.display_screen(' / '))
         self.btn_decimal.clicked.connect(lambda: self.display_screen('.'))
+
+        self.btn_0.setShortcut("0")
+        self.btn_1.setShortcut("1")
+        self.btn_2.setShortcut("2")
+        self.btn_3.setShortcut("3")
+        self.btn_4.setShortcut("4")
+        self.btn_5.setShortcut("5")
+        self.btn_6.setShortcut("6")
+        self.btn_7.setShortcut("7")
+        self.btn_8.setShortcut("8")
+        self.btn_9.setShortcut("9")
+        self.btn_add.setShortcut("+")
+        self.btn_sub.setShortcut("-")
+        self.btn_multiply.setShortcut("*")
+        self.btn_divide.setShortcut("/")
+        self.btn_decimal.setShortcut(".")
+        self.btn_clear.setShortcut("Backspace")
+        self.btn_equals.setShortcut("Enter")
+        self.btn_allclear.setShortcut("Delete")
       
 
 
@@ -50,36 +69,38 @@ class Calculator_class(calculator_ui.Ui_MainWindow, QtWidgets.QMainWindow):
         """
 
         screen_value = str(self.screen.text()).split(' ')
+        screen_text = str(self.screen.text())
         #x = screen_value.split(' ')
-        val1 = float(screen_value[0])
-        operator = screen_value[1]
-        val2 = float(screen_value[2])
-        result = self.maths(val1, val2, operator)
-        self.screen.setText(str(result))
+        x = (eval(str(screen_text)))
+        # val1 = float(screen_value[0])
+        # operator = screen_value[1]
+        # val2 = float(screen_value[2])
+        # result = self.maths(val1, val2, operator)
+        self.screen.setText(str(x))
 
 
 
 
 
-    def maths(self, val1, val2, operator):
-
-        """ this function will take argument and return output
-        :param val1:
-        :param val2:
-        :param operator:
-        :return:
-        """
-        val1 = float(val1)
-        val2 = float(val2)
-
-        if operator is '+':
-            return (val1 + val2)
-        elif operator is '-':
-            return (val1 - val2)
-        elif operator is '/':
-            return (val1/val2)
-        elif operator is '*':
-            return (val1 * val2)
+    # def maths(self, val1, val2, operator):
+    #
+    #     """ this function will take argument and return output
+    #     :param val1:
+    #     :param val2:
+    #     :param operator:
+    #     :return:
+    #     """
+    #     val1 = float(val1)
+    #     val2 = float(val2)
+    #
+    #     if operator is '+':
+    #         return (val1 + val2)
+    #     elif operator is '-':
+    #         return (val1 - val2)
+    #     elif operator is '/':
+    #         return (val1/val2)
+    #     elif operator is '*':
+    #         return (val1 * val2)
         
 
 

@@ -65,26 +65,13 @@
 </string>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
-      <widget class="QWidget" name="tab">
+      <widget class="QWidget" name="tab_contacts">
        <attribute name="title">
         <string>          Contacts            </string>
        </attribute>
-       <widget class="QTableView" name="tableView">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>40</y>
-          <width>731</width>
-          <height>471</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(238, 238, 238);</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="btn_add_contact">
         <property name="geometry">
          <rect>
           <x>820</x>
@@ -103,7 +90,7 @@ background-color: rgb(255, 170, 127);
          <string>  Add Contact  </string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="btn_backup">
         <property name="geometry">
          <rect>
           <x>820</x>
@@ -120,15 +107,28 @@ background-color: rgb(255, 170, 127);</string>
          <string>Backup</string>
         </property>
        </widget>
+       <widget class="QTableWidget" name="table_contacts">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>40</y>
+          <width>731</width>
+          <height>471</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(238, 238, 238);</string>
+        </property>
+       </widget>
       </widget>
-      <widget class="QWidget" name="tab_2">
+      <widget class="QWidget" name="tab_voicemsg">
        <property name="styleSheet">
         <string notr="true">font: 75 15pt &quot;Comic Sans MS&quot;;</string>
        </property>
        <attribute name="title">
         <string>          Voice Message         </string>
        </attribute>
-       <widget class="QListWidget" name="listWidget">
+       <widget class="QListWidget" name="list_vmsg_contacts">
         <property name="geometry">
          <rect>
           <x>30</x>
@@ -141,7 +141,7 @@ background-color: rgb(255, 170, 127);</string>
          <string notr="true">background-color: rgb(238, 238, 238);</string>
         </property>
        </widget>
-       <widget class="QListWidget" name="listWidget_2">
+       <widget class="QListWidget" name="list_vmsg_audios">
         <property name="geometry">
          <rect>
           <x>430</x>
@@ -154,7 +154,7 @@ background-color: rgb(255, 170, 127);</string>
          <string notr="true">background-color: rgb(238, 238, 238);</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_3">
+       <widget class="QPushButton" name="btn_send_vmsg">
         <property name="geometry">
          <rect>
           <x>830</x>
@@ -181,11 +181,11 @@ background-color: rgb(255, 170, 127);</string>
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_3">
+      <widget class="QWidget" name="tab_sms">
        <attribute name="title">
         <string>         SMS         </string>
        </attribute>
-       <widget class="QListWidget" name="listWidget_3">
+       <widget class="QListWidget" name="list_sms_contacts">
         <property name="geometry">
          <rect>
           <x>30</x>
@@ -198,7 +198,7 @@ background-color: rgb(255, 170, 127);</string>
          <string notr="true">background-color: rgb(238, 238, 238);</string>
         </property>
        </widget>
-       <widget class="QTextEdit" name="textEdit">
+       <widget class="QTextEdit" name="sms_area">
         <property name="geometry">
          <rect>
           <x>430</x>
@@ -223,7 +223,7 @@ background-color: rgb(255, 170, 127);</string>
          <string>Type Message Here</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_4">
+       <widget class="QPushButton" name="btn_send_sms">
         <property name="geometry">
          <rect>
           <x>640</x>
@@ -250,11 +250,11 @@ background-color: rgb(255, 170, 127);</string>
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_4">
+      <widget class="QWidget" name="tab_email">
        <attribute name="title">
         <string>         Email          </string>
        </attribute>
-       <widget class="QListWidget" name="listWidget_4">
+       <widget class="QListWidget" name="list_email_contacts">
         <property name="geometry">
          <rect>
           <x>30</x>
@@ -267,7 +267,7 @@ background-color: rgb(255, 170, 127);</string>
          <string notr="true">background-color: rgb(238, 238, 238);</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit">
+       <widget class="QLineEdit" name="mailID_area">
         <property name="geometry">
          <rect>
           <x>430</x>
@@ -283,7 +283,7 @@ background-color: rgb(255, 170, 127);</string>
          <string>To  :    Email  ID  Here</string>
         </property>
        </widget>
-       <widget class="QTextEdit" name="textEdit_2">
+       <widget class="QTextEdit" name="mail_area">
         <property name="geometry">
          <rect>
           <x>430</x>
@@ -308,7 +308,7 @@ background-color: rgb(255, 170, 127);</string>
          <string>Type your Mail Here</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_5">
+       <widget class="QPushButton" name="btn_send_email">
         <property name="geometry">
          <rect>
           <x>630</x>
