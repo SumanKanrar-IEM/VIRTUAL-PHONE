@@ -161,6 +161,7 @@ class MainWindow(QMainWindow):
 
 app = QApplication(sys.argv)
 app.setApplicationName("Blazing Browser")
+app.setStyle(QStyleFactory.create('Fusion'))
 #app.setOrganizationName("CLASHERS")
 #app.setOrganizationDomain("https://about.me/suman.kanrar")
 window = MainWindow()

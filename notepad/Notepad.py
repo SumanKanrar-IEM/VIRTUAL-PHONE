@@ -1,6 +1,6 @@
 import os
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QWidget, QFontDialog
+from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QWidget, QFontDialog, QStyleFactory
 from PyQt5.QtWidgets import QTextEdit, QPushButton, QVBoxLayout, QHBoxLayout, QAction, qApp
 from PyQt5.QtGui import QFont, QIcon
 
@@ -14,6 +14,9 @@ class Notepad(QWidget):
         self.sav_btn = QPushButton('Save')
         self.opn_btn = QPushButton('Open')
         self.font_btn = QPushButton('Change Font')
+        # self.clr_btn.setStyle(QStyleFactory.create('Fusion'))
+        # self.sav_btn.setStyle(QStyleFactory.create('Windows'))
+        # self.opn_btn.setStyle(QStyleFactory.create('Cleanlooks'))
 
         self.init_ui()
 
@@ -118,5 +121,6 @@ class Writer(QMainWindow):
 
 
 app = QApplication(sys.argv)
+app.setStyle(QStyleFactory.create('Fusion'))
 writer = Writer()
 sys.exit(app.exec_())

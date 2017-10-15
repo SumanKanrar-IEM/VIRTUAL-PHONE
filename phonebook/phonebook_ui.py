@@ -177,6 +177,7 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     Dialog = QtWidgets.QDialog()
     ui = Ui_Dialog()
+    app.setStyle(QtWidgets.QStyleFactory.create('Fusion'))
     ui.setupUi(Dialog)
     Dialog.show()
     sys.exit(app.exec_())

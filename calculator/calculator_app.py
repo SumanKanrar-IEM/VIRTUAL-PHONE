@@ -108,6 +108,7 @@ class Calculator_class(calculator_ui.Ui_MainWindow, QtWidgets.QMainWindow):
 
 if __name__ == '__main__':
     qapp = QtWidgets.QApplication(sys.argv)
+    qapp.setStyle(QtWidgets.QStyleFactory.create('Fusion'))
     calc = Calculator_class()
     calc.show()
     qapp.exec_()
