@@ -24,6 +24,8 @@ class Calculator_class(calculator_ui.Ui_MainWindow, QtWidgets.QMainWindow):
         self.btn_multiply.clicked.connect(lambda: self.display_screen(' * '))
         self.btn_divide.clicked.connect(lambda: self.display_screen(' / '))
         self.btn_decimal.clicked.connect(lambda: self.display_screen('.'))
+      
+
 
         self.btn_allclear.clicked.connect(self.screen.clear)
         self.btn_clear.clicked.connect(self.screen.backspace)
@@ -78,6 +80,7 @@ class Calculator_class(calculator_ui.Ui_MainWindow, QtWidgets.QMainWindow):
             return (val1/val2)
         elif operator is '*':
             return (val1 * val2)
+        
 
 
 #print (calculation(50, 15, 'multiply'))
