@@ -1,0 +1,15 @@
+1. Introduction - 
+
+
+2. Scope of the Project - Utilities/Uses
+
+
+3. Functionalities - details in points
+
+4. SoftWare requirements
+5. Hardware Requirements
+
+6. Results and Discussions - Outputs
+
+7. Future Scope - 
+8. Conclusion - 
