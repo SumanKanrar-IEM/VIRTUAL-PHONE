@@ -4,6 +4,12 @@ from twilio.rest import Client
 
 account_sid = "AC4e9647745ad74b4b505ae89084eda74b"
 auth_token = "f8c22ad19cb744fd5b36e835c983211d"
+
+
+#alternate account_sid = "ACcbd1807fccb261db8b7d18f0983b412b"
+#alternate auth-token = "0da34ba8de62e3d7fa45fc7f92926e15"
+#alternate phone number = "+13203320575"
+
 client = Client(account_sid, auth_token)
 
 #message = client.messages.create(body="Hey Surbhi! Batman here",to="+919163149163",from_="+19124175695")   #text message
