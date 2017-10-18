@@ -46,7 +46,7 @@ class Sheet(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.form_widget = MyTable(10, 10)
+        self.form_widget = MyTable(10, 5)
         self.setCentralWidget(self.form_widget)
         col_headers = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
         self.form_widget.setHorizontalHeaderLabels(col_headers)

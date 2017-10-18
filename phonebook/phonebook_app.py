@@ -1,6 +1,9 @@
 import sys
+import os
 from PyQt5 import QtCore, QtGui, QtWidgets
 import phonebook_non_exec
+import addcontact_app
+from addcontact_app import addcontact_class
 class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
 
     def __init__(self):
@@ -16,6 +19,32 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
 
 
 
+
+
+
+
+
+
+
+        self.btn_add_contact.clicked.connect(self.addContact)
+        self.btn_backup.clicked.connect(self.Backup_Contacts)
+
+
+
+    def addContact(self):
+        print("add contact clicked")
+        os.system('python addcontact_app.py')
+        # self.window = QtWidgets.QDialog()
+        # self.ui = addcontact_class()
+        # self.ui.setupUi(self.window)
+        # self.window.show()
+        #phonebook_obj.hide()
+
+
+
+
+    def Backup_Contacts(self):
+        print("backup button clicked")
 
 
 

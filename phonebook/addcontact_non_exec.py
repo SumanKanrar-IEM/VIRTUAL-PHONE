@@ -17,7 +17,7 @@ class Ui_Form(object):
         Form.setStyleSheet("background-color: rgb(181, 206, 231);")
         self.contact_icon = QtWidgets.QLabel(Form)
         self.contact_icon.setGeometry(QtCore.QRect(310, 30, 251, 191))
-        self.contact_icon.setStyleSheet("background-color: rgb(255, 255, 255);")
+        #self.contact_icon.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.contact_icon.setText("")
         self.contact_icon.setObjectName("contact_icon")
         self.btn_set_icon = QtWidgets.QPushButton(Form)
