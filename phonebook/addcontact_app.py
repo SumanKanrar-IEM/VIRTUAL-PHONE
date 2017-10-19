@@ -10,6 +10,42 @@ class addcontact_class(addcontact_non_exec.Ui_Form, QtWidgets.QWidget):
         self.setupUi(self)
 
 
+        regex_name = QtCore.QRegExp("[a-z-A-Z_]+")
+        name_validator = QtGui.QRegExpValidator(regex_name)
+        self.name_lineEdit.setValidator(name_validator)
+        self.name_lineEdit = str(self.name_lineEdit.text())
+
+
+        self.phone_lineEdit.setMaxLength(10)
+        regex_phone = QtCore.QRegExp("[0-9_]+")
+        phone_validator = QtGui.QRegExpValidator(regex_phone)
+        self.phone_lineEdit.setValidator(phone_validator)
+
+
+        regex_email = QtCore.QRegExp('^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$')
+        email_validator = QtGui.QRegExpValidator(regex_email)
+        self.email_lineEdit.setValidator(email_validator)
+        self.email_lineEdit = str(self.email_lineEdit)
+
+
+        self.address_textEdit = str(self.address_textEdit)
+
+
+        self.dob_dateEdit.setDisplayFormat('dd-MM-yyyy')
+        self.dob_dateEdit.setCalendarPopup(True)
+        self.dob_dateEdit.setDate(QtCore.QDate.currentDate())
+        temp_dob = self.dob_dateEdit.date()
+        DOB = temp_dob.toPyDate()
+        print(DOB)
+
+
+
+
+
+
+
+
+
 
 
 
