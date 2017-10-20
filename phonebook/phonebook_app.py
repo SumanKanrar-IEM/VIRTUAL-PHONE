@@ -23,13 +23,15 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
             print("Contacts tab is active by default")
             self.open_sheet()
 
+
+
+
+
+
+
+
+
         self.tabWidget.currentChanged.connect(self.tab_changed)
-
-
-
-
-
-
         self.btn_add_contact.clicked.connect(self.addContact)
         self.btn_backup.clicked.connect(self.Backup_Contacts)
 
@@ -39,9 +41,11 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
 
         if self.tabWidget.currentWidget() == self.tab_contacts:
             print("contacts tab is active")
+            self.open_sheet()
 
         if self.tabWidget.currentWidget() == self.tab_voicemsg:
             print("voice message tab is active")
+            #self.open_voicelist()
 
         if self.tabWidget.currentWidget() == self.tab_sms:
             print("sms tab is active")
@@ -88,7 +92,7 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
         print("backup button clicked")
         path = QFileDialog.getSaveFileName(self, 'Backup Contacts', os.getenv('HOME'), 'CSV(*.csv)')
         if path[0] != '':
-            with open(path[0], 'w') as csv_file:
+            with open(path[0], 'w', newline='') as csv_file:
                 writer = csv.writer(csv_file, dialect='excel')
                 for row in range(self.table_contacts.rowCount()):
                     row_data = []
@@ -104,7 +108,11 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
         print("all operations successful")
 
 
-
+    def open_voicelist(self):
+        print("Entered function")
+        for vmsgCon_row in range(self.table_contacts.rowCount()):
+            #for vmsgCon_col in range(self.table_contacts.columnCount()):
+            self.list_vmsg_contacts.addItem(self.table_contacts.item(vmsgCon_row, 0).text())
 
 
 if __name__ == '__main__':

@@ -46,6 +46,7 @@ class Ui_Form(object):
         self.address_textEdit.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "font: 75 italic 16pt \"Consolas\";")
         self.address_textEdit.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustIgnored)
+        self.address_textEdit.setAlignment(QtCore.Qt.AlignCenter)
         self.address_textEdit.setObjectName("address_textEdit")
         self.dob_label = QtWidgets.QLabel(Form)
         self.dob_label.setGeometry(QtCore.QRect(50, 730, 221, 51))
@@ -93,6 +94,7 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Add Contact"))
+        Form.setWindowIcon(QtGui.QIcon('addcontact.png'))
         self.btn_set_icon.setText(_translate("Form", "Set Contact Icon"))
         self.name_label.setText(_translate("Form", "Name : "))
         self.phone_label.setText(_translate("Form", "Phone Number :"))

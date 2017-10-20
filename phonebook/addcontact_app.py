@@ -1,5 +1,6 @@
 import sys
 import os
+import csv
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QFileDialog
 import addcontact_non_exec
@@ -13,7 +14,7 @@ class addcontact_class(addcontact_non_exec.Ui_Form, QtWidgets.QWidget):
         regex_name = QtCore.QRegExp("[a-z-A-Z_]+")
         name_validator = QtGui.QRegExpValidator(regex_name)
         self.name_lineEdit.setValidator(name_validator)
-        self.name_lineEdit = str(self.name_lineEdit.text())
+        #self.name_lineEdit = str(self.name_lineEdit.text())
 
 
         self.phone_lineEdit.setMaxLength(10)
@@ -25,23 +26,19 @@ class addcontact_class(addcontact_non_exec.Ui_Form, QtWidgets.QWidget):
         regex_email = QtCore.QRegExp('^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$')
         email_validator = QtGui.QRegExpValidator(regex_email)
         self.email_lineEdit.setValidator(email_validator)
-        self.email_lineEdit = str(self.email_lineEdit)
+        #self.email_lineEdit = str(self.email_lineEdit)
 
 
-        self.address_textEdit = str(self.address_textEdit)
+        #self.address_textEdit = str(self.address_textEdit)
 
 
         self.dob_dateEdit.setDisplayFormat('dd-MM-yyyy')
-        self.dob_dateEdit.setCalendarPopup(True)
+        #self.dob_dateEdit.setCalendarPopup(True)
         self.dob_dateEdit.setDate(QtCore.QDate.currentDate())
         temp_dob = self.dob_dateEdit.date()
-        DOB = temp_dob.toPyDate()
+        # DOB = temp_dob.toPyDate()
+        DOB =temp_dob.toString('dd/MM/yyyy')
         print(DOB)
-
-
-
-
-
 
 
 
@@ -59,6 +56,15 @@ class addcontact_class(addcontact_non_exec.Ui_Form, QtWidgets.QWidget):
 
     def save_action(self):
         print("Save button clicked")
+        # print(self.name_lineEdit.text())
+        # print(self.phone_lineEdit.text())
+        # print(self.email_lineEdit.text())
+        # print(self.address_textEdit.toPlainText())
+        # print(self.dob_dateEdit.date().toString('dd/MM/yyyy'))
+        with open('contacts.csv', 'a', newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow([self.name_lineEdit.text(), self.phone_lineEdit.text(), self.email_lineEdit.text(), self.address_textEdit.toPlainText(), self.dob_dateEdit.date().toString('dd-MM-yyyy')])
+
         addcontact_obj.hide()
         os._exit(0)
         #os.system('python phonebook_app.py')
@@ -75,6 +81,8 @@ class addcontact_class(addcontact_non_exec.Ui_Form, QtWidgets.QWidget):
             pixmap = QtGui.QPixmap(fileName)
             self.contact_icon.setPixmap(pixmap)
             self.contact_icon.setScaledContents(True)
+            # pixmap2 = self.contact_icon.pixmap()
+            # print(pixmap2)
 
 
 

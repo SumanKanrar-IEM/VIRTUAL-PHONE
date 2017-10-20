@@ -72,7 +72,7 @@ class Ui_Dialog(object):
         self.table_contacts.horizontalHeader().setStretchLastSection(True)
         self.table_contacts.verticalHeader().setVisible(False)
         self.table_contacts.verticalHeader().setDefaultSectionSize(42)
-        self.table_contacts.verticalHeader().setStretchLastSection(True)
+        self.table_contacts.verticalHeader().setStretchLastSection(False)
         self.table_contacts.verticalHeader().setMinimumSectionSize(40)
         self.tabWidget.addTab(self.tab_contacts, "")
         self.tab_voicemsg = QtWidgets.QWidget()
