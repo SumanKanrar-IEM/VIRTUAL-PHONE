@@ -65,6 +65,8 @@ class addcontact_class(addcontact_non_exec.Ui_Form, QtWidgets.QWidget):
             writer = csv.writer(f)
             writer.writerow([self.name_lineEdit.text(), self.phone_lineEdit.text(), self.email_lineEdit.text(), self.address_textEdit.toPlainText(), self.dob_dateEdit.date().toString('dd-MM-yyyy')])
 
+        #self.list_vmsg_contacts.addItem(self.name_lineEdit.text().text())
+
         addcontact_obj.hide()
         os._exit(0)
         #os.system('python phonebook_app.py')

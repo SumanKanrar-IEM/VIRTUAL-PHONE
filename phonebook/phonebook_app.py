@@ -23,7 +23,8 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
             print("Contacts tab is active by default")
             self.open_sheet()
 
-
+        for vmsgCon_row in range(self.table_contacts.rowCount()):
+            self.list_vmsg_contacts.addItem(self.table_contacts.item(vmsgCon_row, 0).text())
 
 
 
@@ -45,7 +46,7 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
 
         if self.tabWidget.currentWidget() == self.tab_voicemsg:
             print("voice message tab is active")
-            #self.open_voicelist()
+            self.open_voicelist()
 
         if self.tabWidget.currentWidget() == self.tab_sms:
             print("sms tab is active")
@@ -110,9 +111,8 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
 
     def open_voicelist(self):
         print("Entered function")
-        for vmsgCon_row in range(self.table_contacts.rowCount()):
-            #for vmsgCon_col in range(self.table_contacts.columnCount()):
-            self.list_vmsg_contacts.addItem(self.table_contacts.item(vmsgCon_row, 0).text())
+        # for vmsgCon_row in range(self.table_contacts.rowCount()):
+        #     self.list_vmsg_contacts.addItem(self.table_contacts.item(vmsgCon_row, 0).text())
 
 
 if __name__ == '__main__':
