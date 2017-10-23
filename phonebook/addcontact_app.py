@@ -61,11 +61,16 @@ class addcontact_class(addcontact_non_exec.Ui_Form, QtWidgets.QWidget):
         # print(self.email_lineEdit.text())
         # print(self.address_textEdit.toPlainText())
         # print(self.dob_dateEdit.date().toString('dd/MM/yyyy'))
-        with open('contacts.csv', 'a', newline='') as f:
+        with open('backup_contacts.csv', 'a', newline='') as f:
             writer = csv.writer(f)
             writer.writerow([self.name_lineEdit.text(), self.phone_lineEdit.text(), self.email_lineEdit.text(), self.address_textEdit.toPlainText(), self.dob_dateEdit.date().toString('dd-MM-yyyy')])
 
         #self.list_vmsg_contacts.addItem(self.name_lineEdit.text().text())
+        self.list_vmsg_contacts.addItem(self.name_lineEdit.text())
+        self.list_vmsg_contacts.item(self.name_lineEdit.text()).setHidden(False)
+        self.list_vmsg_contacts.repaint()
+        self.tab_voicemsg.repaint()
+        self.tab_voicemsg.update()
 
         addcontact_obj.hide()
         os._exit(0)

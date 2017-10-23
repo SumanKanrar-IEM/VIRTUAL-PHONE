@@ -8,9 +8,13 @@ from PyQt5.QtWidgets import QFileDialog, QTableWidgetItem, QTableWidget, QMessag
 import csv
 class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
 
+    contacts_list = []
+
     def __init__(self):
         super(Phonebook_class, self).__init__()
         self.setupUi(self)
+
+
 
         self.table_contacts.setHorizontalHeaderLabels(['Name','Phone No.','Email ID','Address','DOB'])
         self.table_contacts.resizeColumnsToContents()
@@ -24,7 +28,14 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
             self.open_sheet()
 
         for vmsgCon_row in range(self.table_contacts.rowCount()):
+            self.contacts_list.append(self.table_contacts.item(vmsgCon_row, 0).text())
             self.list_vmsg_contacts.addItem(self.table_contacts.item(vmsgCon_row, 0).text())
+
+
+
+
+
+
 
 
 
@@ -44,9 +55,11 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
             print("contacts tab is active")
             self.open_sheet()
 
+
         if self.tabWidget.currentWidget() == self.tab_voicemsg:
             print("voice message tab is active")
             self.open_voicelist()
+
 
         if self.tabWidget.currentWidget() == self.tab_sms:
             print("sms tab is active")
@@ -58,7 +71,7 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
 
     def open_sheet(self):
         #self.check_change = False
-        path = ('./contacts.csv', 'CSV(*.csv)')
+        path = ('./backup_contacts.csv', 'CSV(*.csv)')
         # QFileDialog.getOpenFileName(self, 'Open CSV', os.getenv('HOME'), 'CSV(*.csv)')
         print(path)
         if path[0] != '':
@@ -111,8 +124,12 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
 
     def open_voicelist(self):
         print("Entered function")
-        # for vmsgCon_row in range(self.table_contacts.rowCount()):
-        #     self.list_vmsg_contacts.addItem(self.table_contacts.item(vmsgCon_row, 0).text())
+        print(len(self.contacts_list))
+        #self.list_vmsg_contacts.items().setHidden(False)
+        self.tab_voicemsg.repaint()
+        self.tab_voicemsg.update()
+
+
 
 
 if __name__ == '__main__':
