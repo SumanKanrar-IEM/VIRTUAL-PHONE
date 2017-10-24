@@ -27,9 +27,9 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
             print("Contacts tab is active by default")
             self.open_sheet()
 
-        for vmsgCon_row in range(self.table_contacts.rowCount()):
-            self.contacts_list.append(self.table_contacts.item(vmsgCon_row, 0).text())
-            self.list_vmsg_contacts.addItem(self.table_contacts.item(vmsgCon_row, 0).text())
+        # for vmsgCon_row in range(self.table_contacts.rowCount()):
+        #     self.contacts_list.append(self.table_contacts.item(vmsgCon_row, 0).text())
+        #     self.list_vmsg_contacts.addItem(self.table_contacts.item(vmsgCon_row, 0).text())
 
 
 
@@ -88,9 +88,12 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
                         item = QTableWidgetItem(stuff)
                         self.table_contacts.setItem(row, column, item)
         #self.check_change = True
+        print(self.table_contacts.rowCount())
+
 
     def addContact(self):
         print("add contact clicked")
+        QtCore.QCoreApplication.processEvents()
         os.system('python addcontact_app.py')
         # self.window = QtWidgets.QDialog()
         # self.ui = addcontact_class()
@@ -125,9 +128,10 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
     def open_voicelist(self):
         print("Entered function")
         print(len(self.contacts_list))
-        #self.list_vmsg_contacts.items().setHidden(False)
-        self.tab_voicemsg.repaint()
-        self.tab_voicemsg.update()
+        self.list_vmsg_contacts.clear()
+        for vmsgCon_row in range(self.table_contacts.rowCount()):
+            #self.contacts_list.append(self.table_contacts.item(vmsgCon_row, 0).text())
+            self.list_vmsg_contacts.addItem(self.table_contacts.item(vmsgCon_row, 0).text())
 
 
 

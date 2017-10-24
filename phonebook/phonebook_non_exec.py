@@ -80,7 +80,7 @@ class Ui_Dialog(object):
         self.tab_voicemsg.setObjectName("tab_voicemsg")
         self.list_vmsg_contacts = QtWidgets.QListWidget(self.tab_voicemsg)
         self.list_vmsg_contacts.setGeometry(QtCore.QRect(30, 40, 371, 471))
-        self.list_vmsg_contacts.setStyleSheet("background-color: rgb(238, 238, 238);")
+        self.list_vmsg_contacts.setStyleSheet("background-color: rgb(238, 238, 238);""font: 75 16pt \"Consolas\";")
         self.list_vmsg_contacts.setObjectName("list_vmsg_contacts")
         self.list_vmsg_audios = QtWidgets.QListWidget(self.tab_voicemsg)
         self.list_vmsg_audios.setGeometry(QtCore.QRect(430, 40, 371, 471))
