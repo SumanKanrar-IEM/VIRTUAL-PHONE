@@ -84,7 +84,7 @@ class Ui_Dialog(object):
         self.list_vmsg_contacts.setObjectName("list_vmsg_contacts")
         self.list_vmsg_audios = QtWidgets.QListWidget(self.tab_voicemsg)
         self.list_vmsg_audios.setGeometry(QtCore.QRect(430, 40, 371, 471))
-        self.list_vmsg_audios.setStyleSheet("background-color: rgb(238, 238, 238);")
+        self.list_vmsg_audios.setStyleSheet("background-color: rgb(238, 238, 238);""font: 75 16pt \"Consolas\";")
         self.list_vmsg_audios.setObjectName("list_vmsg_audios")
         self.btn_send_vmsg = QtWidgets.QPushButton(self.tab_voicemsg)
         self.btn_send_vmsg.setGeometry(QtCore.QRect(830, 230, 211, 91))

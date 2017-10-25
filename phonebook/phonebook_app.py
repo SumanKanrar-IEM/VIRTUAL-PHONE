@@ -8,7 +8,7 @@ from PyQt5.QtWidgets import QFileDialog, QTableWidgetItem, QTableWidget, QMessag
 import csv
 class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
 
-    contacts_list = []
+    audios_list = []
 
     def __init__(self):
         super(Phonebook_class, self).__init__()
@@ -27,9 +27,8 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
             print("Contacts tab is active by default")
             self.open_sheet()
 
-        # for vmsgCon_row in range(self.table_contacts.rowCount()):
-        #     self.contacts_list.append(self.table_contacts.item(vmsgCon_row, 0).text())
-        #     self.list_vmsg_contacts.addItem(self.table_contacts.item(vmsgCon_row, 0).text())
+        self.audios_list = ['Congratulations','Good Morning','Good Night','Happy Birthday','Merry Christmas','Thank You']
+        self.list_vmsg_audios.addItems(self.audios_list)
 
 
 
@@ -127,10 +126,8 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
 
     def open_voicelist(self):
         print("Entered function")
-        print(len(self.contacts_list))
         self.list_vmsg_contacts.clear()
         for vmsgCon_row in range(self.table_contacts.rowCount()):
-            #self.contacts_list.append(self.table_contacts.item(vmsgCon_row, 0).text())
             self.list_vmsg_contacts.addItem(self.table_contacts.item(vmsgCon_row, 0).text())
 
 
