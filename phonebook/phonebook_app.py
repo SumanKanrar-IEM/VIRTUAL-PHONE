@@ -36,15 +36,30 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
 
 
 
-
-
-
-
-
-
+        self.list_vmsg_contacts.itemClicked.connect(self.list_contacts_selected)
+        self.list_vmsg_audios.itemClicked.connect(self.list_audio_selected)
         self.tabWidget.currentChanged.connect(self.tab_changed)
         self.btn_add_contact.clicked.connect(self.addContact)
         self.btn_backup.clicked.connect(self.Backup_Contacts)
+        self.btn_send_vmsg.clicked.connect(self.send_voicemsg)
+
+
+    def send_voicemsg(self):
+        pass
+
+
+    def list_contacts_selected(self):
+        a = self.list_vmsg_contacts.currentItem().text()
+        b = self.list_vmsg_contacts.currentRow()
+        c = self.table_contacts.item(b, 1).text()
+        print(a, b)
+        print(c)
+
+
+    def list_audio_selected(self):
+        audioSelected = self.list_vmsg_audios.currentItem().text()
+        row_audioSelected = self.list_vmsg_audios.currentRow()
+        print(audioSelected, row_audioSelected)
 
 
     def tab_changed(self):
@@ -71,7 +86,6 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
     def open_sheet(self):
         #self.check_change = False
         path = ('./backup_contacts.csv', 'CSV(*.csv)')
-        # QFileDialog.getOpenFileName(self, 'Open CSV', os.getenv('HOME'), 'CSV(*.csv)')
         print(path)
         if path[0] != '':
             with open(path[0], newline='') as csv_file:
