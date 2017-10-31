@@ -1,5 +1,7 @@
 import sys
 import os
+from twilio.rest import Client
+import smtplib
 from PyQt5 import QtCore, QtGui, QtWidgets
 import phonebook_non_exec
 import addcontact_app
@@ -29,37 +31,28 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
 
         self.audios_list = ['Congratulations','Good Morning','Good Night','Happy Birthday','Merry Christmas','Thank You']
         self.list_vmsg_audios.addItems(self.audios_list)
+        self.list_vmsg_audios.setDisabled(True)
 
 
+        self.sms_area.setDisabled(True)
 
-
+        self.mailID_area.setDisabled(True)
+        self.mail_area.setDisabled(True)
 
 
 
         self.list_vmsg_contacts.itemClicked.connect(self.list_contacts_selected)
         self.list_vmsg_audios.itemClicked.connect(self.list_audio_selected)
+        self.list_sms_contacts.itemClicked.connect(self.list_SMSrecipient_selected)
+        self.list_email_contacts.itemClicked.connect(self.list_EMAILrecipient_selected)
         self.tabWidget.currentChanged.connect(self.tab_changed)
         self.btn_add_contact.clicked.connect(self.addContact)
         self.btn_backup.clicked.connect(self.Backup_Contacts)
         self.btn_send_vmsg.clicked.connect(self.send_voicemsg)
+        self.btn_send_sms.clicked.connect(self.send_sms)
+        self.btn_send_email.clicked.connect(self.send_mail)
 
 
-    def send_voicemsg(self):
-        pass
-
-
-    def list_contacts_selected(self):
-        a = self.list_vmsg_contacts.currentItem().text()
-        b = self.list_vmsg_contacts.currentRow()
-        c = self.table_contacts.item(b, 1).text()
-        print(a, b)
-        print(c)
-
-
-    def list_audio_selected(self):
-        audioSelected = self.list_vmsg_audios.currentItem().text()
-        row_audioSelected = self.list_vmsg_audios.currentRow()
-        print(audioSelected, row_audioSelected)
 
 
     def tab_changed(self):
@@ -77,9 +70,152 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
 
         if self.tabWidget.currentWidget() == self.tab_sms:
             print("sms tab is active")
+            self.open_smslist()
 
         if self.tabWidget.currentWidget() == self.tab_email:
             print("Email tab is active")
+            self.open_maillist()
+
+
+
+
+    def send_voicemsg(self):
+
+        vmsg_recipient = "+91" + str(self.phonenumber)
+        print(vmsg_recipient)
+
+        #URL = "https://sites.google.com/site/infotricks1on1/home/SampleAudio_0.5mb.mp3?attredirects=0&d=1.mp3"
+
+        account_sid = "AC4e9647745ad74b4b505ae89084eda74b"
+        auth_token = "f8c22ad19cb744fd5b36e835c983211d"
+
+        # alternate account_sid = "ACcbd1807fccb261db8b7d18f0983b412b"
+        # alternate auth-token = "0da34ba8de62e3d7fa45fc7f92926e15"
+        # alternate phone number = "+13203320575"
+
+        client = Client(account_sid, auth_token)
+
+        call = client.calls.create(to= vmsg_recipient, from_="+19124175695", url= self.URL)
+        print(call.sid)
+        self.list_vmsg_audios.setDisabled(True)
+
+
+
+    def send_sms(self):
+
+        sms_recipient = "+91" + str(self.recipient_number)
+        print(sms_recipient)
+
+        account_sid = "AC4e9647745ad74b4b505ae89084eda74b"
+        auth_token = "f8c22ad19cb744fd5b36e835c983211d"
+
+        # alternate account_sid = "ACcbd1807fccb261db8b7d18f0983b412b"
+        # alternate auth-token = "0da34ba8de62e3d7fa45fc7f92926e15"
+        # alternate phone number = "+13203320575"
+
+        client = Client(account_sid, auth_token)
+
+        message = client.messages.create(body= self.sms_area.toPlainText(), to=sms_recipient, from_="+19124175695")
+        # text message
+        print(message.sid)
+        self.sms_area.clear()
+        self.sms_area.setDisabled(True)
+
+
+
+
+    def send_mail(self):
+        print("Send Email button clicked")
+        content = self.mail_area.toPlainText()
+        mail = smtplib.SMTP('smtp.gmail.com', 587)
+
+        mail.ehlo()
+
+        mail.starttls()
+        # password = f.open('mail_password.txt')
+
+        for line in open('mail_password.txt'):
+            mail.login('sumankanrar420@gmail.com', line)
+
+        mail.sendmail('sumankanrar420@gmail.com', self.mail_id, content)
+
+        mail.close()
+
+        print("Successfully sent")
+
+
+
+
+    def list_contacts_selected(self):
+        self.list_vmsg_contacts.setEnabled(True)
+        self.list_vmsg_contacts.currentItem().setSelected(True)
+
+
+        a = self.list_vmsg_contacts.currentItem().text()
+
+
+        self.selected_row = self.list_vmsg_contacts.currentRow()
+        self.phonenumber = self.table_contacts.item(self.selected_row, 1).text()
+        self.list_vmsg_audios.setDisabled(False)
+
+
+        print(a, self.selected_row)
+        print(self.phonenumber)
+
+
+
+
+    def list_audio_selected(self):
+        audioSelected = self.list_vmsg_audios.currentItem().text()
+        row_audioSelected = self.list_vmsg_audios.currentRow()
+
+        if row_audioSelected == 0:
+            self.URL = "https://sumankanrar25.000webhostapp.com/upload/congratulations.mp3"
+        elif row_audioSelected == 1:
+            self.URL = "https://sumankanrar25.000webhostapp.com/upload/good%20morning.mp3"
+        elif row_audioSelected == 2:
+            self.URL = "https://sumankanrar25.000webhostapp.com/upload/good%20night.mp3"
+        elif row_audioSelected == 3:
+            self.URL = "https://sumankanrar25.000webhostapp.com/upload/happy%20birthday.mp3"
+        elif row_audioSelected == 4:
+            self.URL = "https://sumankanrar25.000webhostapp.com/upload/Merry%20christmas.mp3"
+        else:
+            self.URL = "https://sumankanrar25.000webhostapp.com/upload/thank%20you.mp3"
+
+        print(audioSelected, row_audioSelected)
+
+
+
+
+
+    def list_SMSrecipient_selected(self):
+        print("Selected a recipient for sms")
+        self.list_sms_contacts.setEnabled(True)
+        self.list_sms_contacts.currentItem().setSelected(True)
+
+        self.selected_recipient = self.list_sms_contacts.currentRow()
+        self.recipient_number = self.table_contacts.item(self.selected_recipient, 1).text()
+
+        print(self.selected_recipient, self.recipient_number)
+        self.sms_area.setDisabled(False)
+
+
+
+
+    def list_EMAILrecipient_selected(self):
+        print("Selected the mail id for email")
+        self.list_email_contacts.setEnabled(True)
+        self.list_email_contacts.currentItem().setSelected(True)
+
+        self.selected_mailrecipient = self.list_email_contacts.currentRow()
+        self.mail_id = self.table_contacts.item(self.selected_mailrecipient, 2).text()
+
+        print(self.selected_mailrecipient, self.mail_id)
+        self.mailID_area.setDisabled(False)
+        self.mail_area.setDisabled(False)
+
+        self.mailID_area.setText("To :           " + self.mail_id)
+
 
 
 
@@ -102,6 +238,8 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
                         self.table_contacts.setItem(row, column, item)
         #self.check_change = True
         print(self.table_contacts.rowCount())
+
+
 
 
     def addContact(self):
@@ -138,11 +276,34 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
         print("all operations successful")
 
 
+
+
+
     def open_voicelist(self):
         print("Entered function")
         self.list_vmsg_contacts.clear()
         for vmsgCon_row in range(self.table_contacts.rowCount()):
             self.list_vmsg_contacts.addItem(self.table_contacts.item(vmsgCon_row, 0).text())
+
+
+
+
+    def open_smslist(self):
+        print("Entered function")
+        self.list_sms_contacts.clear()
+        for smsCon_row in range(self.table_contacts.rowCount()):
+            self.list_sms_contacts.addItem(self.table_contacts.item(smsCon_row, 0).text())
+
+
+
+
+    def open_maillist(self):
+        print("Entered function")
+        self.list_email_contacts.clear()
+        for emailCon_row in range(self.table_contacts.rowCount()):
+            self.list_email_contacts.addItem(self.table_contacts.item(emailCon_row, 0).text())
+
+
 
 
 
