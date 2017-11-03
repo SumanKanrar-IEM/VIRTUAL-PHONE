@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>weather_screen</class>
+ <widget class="QWidget" name="weather_screen">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1083</width>
+    <height>508</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Weather</string>
+  </property>
+  <widget class="QLabel" name="weather_image">
+   <property name="geometry">
+    <rect>
+     <x>720</x>
+     <y>100</y>
+     <width>311</width>
+     <height>291</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>50</y>
+     <width>651</width>
+     <height>401</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_location">
+      <property name="styleSheet">
+       <string notr="true">font: 20pt &quot;Rockwell&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Location : </string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="value_location">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_temperature">
+      <property name="styleSheet">
+       <string notr="true">font: 20pt &quot;Rockwell&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Temperature : </string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLabel" name="vaue_temperature">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_skycondition">
+      <property name="styleSheet">
+       <string notr="true">font: 20pt &quot;Rockwell&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Sky Condition : </string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLabel" name="value_skycondition">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_humidity">
+      <property name="styleSheet">
+       <string notr="true">font: 20pt &quot;Rockwell&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Humidity : </string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLabel" name="value_humidity">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="value_windspeed">
+      <property name="styleSheet">
+       <string notr="true">font: 20pt &quot;Rockwell&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Wind Speed : </string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QLabel" name="value_windspeed_2">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
