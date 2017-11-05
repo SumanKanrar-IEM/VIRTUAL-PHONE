@@ -29,7 +29,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -51,8 +51,14 @@
     </item>
     <item row="0" column="1">
      <widget class="QLabel" name="value_location">
+      <property name="styleSheet">
+       <string notr="true">font: 75 italic 14pt &quot;Consolas&quot;;</string>
+      </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
@@ -68,8 +74,14 @@
     </item>
     <item row="1" column="1">
      <widget class="QLabel" name="vaue_temperature">
+      <property name="styleSheet">
+       <string notr="true">font: 75 italic 14pt &quot;Consolas&quot;;</string>
+      </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
@@ -85,8 +97,14 @@
     </item>
     <item row="2" column="1">
      <widget class="QLabel" name="value_skycondition">
+      <property name="styleSheet">
+       <string notr="true">font: 75 italic 14pt &quot;Consolas&quot;;</string>
+      </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
@@ -102,8 +120,14 @@
     </item>
     <item row="3" column="1">
      <widget class="QLabel" name="value_humidity">
+      <property name="styleSheet">
+       <string notr="true">font: 75 italic 14pt &quot;Consolas&quot;;</string>
+      </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
@@ -119,8 +143,14 @@
     </item>
     <item row="4" column="1">
      <widget class="QLabel" name="value_windspeed_2">
+      <property name="styleSheet">
+       <string notr="true">font: 75 italic 14pt &quot;Consolas&quot;;</string>
+      </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
