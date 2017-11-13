@@ -13,6 +13,7 @@ class Ui_weather_screen(object):
         weather_screen.setObjectName("weather_screen")
         weather_screen.resize(1083, 508)
         weather_screen.setStyleSheet("background-color: rgb(255,255,255);")
+        #weather_screen.setStyleSheet("background-image: url(green-wallpaper.jpg)")
         self.weather_image = QtWidgets.QLabel(weather_screen)
         self.weather_image.setGeometry(QtCore.QRect(720, 100, 311, 291))
         #self.weather_image.setStyleSheet("background-color: rgb(255, 255, 255);")

@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1123</width>
+    <height>665</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1123</width>
+    <height>665</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1123</width>
+    <height>665</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>10</pointsize>
+    <weight>75</weight>
+    <bold>true</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Phonebook</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>phonebook.png</normaloff>phonebook.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(161, 191, 255);</string>
+  </property>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>30</y>
+     <width>1061</width>
+     <height>601</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="font">
+       <font>
+        <family>Comic Sans MS</family>
+        <pointsize>15</pointsize>
+        <weight>9</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 15pt &quot;Comic Sans MS&quot;;
+</string>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="tab_contacts">
+       <attribute name="title">
+        <string>          Contacts            </string>
+       </attribute>
+       <widget class="QPushButton" name="btn_add_contact">
+        <property name="geometry">
+         <rect>
+          <x>820</x>
+          <y>210</y>
+          <width>161</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 75 15pt &quot;Comic Sans MS&quot;;
+background-color: rgb(255, 170, 127);
+
+</string>
+        </property>
+        <property name="text">
+         <string>  Add Contact  </string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btn_backup">
+        <property name="geometry">
+         <rect>
+          <x>820</x>
+          <y>300</y>
+          <width>161</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 75 15pt &quot;Comic Sans MS&quot;;
+background-color: rgb(255, 170, 127);</string>
+        </property>
+        <property name="text">
+         <string>Backup</string>
+        </property>
+       </widget>
+       <widget class="QTableWidget" name="table_contacts">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>40</y>
+          <width>731</width>
+          <height>471</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>10</pointsize>
+          <weight>9</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(238, 238, 238);
+font: 75 10pt &quot;Arial&quot;;</string>
+        </property>
+        <property name="rowCount">
+         <number>10</number>
+        </property>
+        <property name="columnCount">
+         <number>5</number>
+        </property>
+        <attribute name="horizontalHeaderDefaultSectionSize">
+         <number>142</number>
+        </attribute>
+        <attribute name="horizontalHeaderStretchLastSection">
+         <bool>true</bool>
+        </attribute>
+        <attribute name="verticalHeaderVisible">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="verticalHeaderDefaultSectionSize">
+         <number>42</number>
+        </attribute>
+        <attribute name="verticalHeaderMinimumSectionSize">
+         <number>40</number>
+        </attribute>
+        <row/>
+        <row/>
+        <row/>
+        <row/>
+        <row/>
+        <row/>
+        <row/>
+        <row/>
+        <row/>
+        <row/>
+        <column/>
+        <column/>
+        <column/>
+        <column/>
+        <column/>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_voicemsg">
+       <property name="styleSheet">
+        <string notr="true">font: 75 15pt &quot;Comic Sans MS&quot;;</string>
+       </property>
+       <attribute name="title">
+        <string>          Voice Message         </string>
+       </attribute>
+       <widget class="QListWidget" name="list_vmsg_contacts">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>40</y>
+          <width>371</width>
+          <height>471</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(238, 238, 238);</string>
+        </property>
+       </widget>
+       <widget class="QListWidget" name="list_vmsg_audios">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>40</y>
+          <width>371</width>
+          <height>471</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(238, 238, 238);</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btn_send_vmsg">
+        <property name="geometry">
+         <rect>
+          <x>830</x>
+          <y>230</y>
+          <width>211</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>12</pointsize>
+          <weight>9</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 75 12pt &quot;Comic Sans MS&quot;;
+background-color: rgb(255, 170, 127);</string>
+        </property>
+        <property name="text">
+         <string>Send Voice Message</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_sms">
+       <attribute name="title">
+        <string>         SMS         </string>
+       </attribute>
+       <widget class="QListWidget" name="list_sms_contacts">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>40</y>
+          <width>371</width>
+          <height>471</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(238, 238, 238);</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="sms_area">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>40</y>
+          <width>591</width>
+          <height>321</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>15</pointsize>
+          <weight>9</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(238, 238, 238);</string>
+        </property>
+        <property name="placeholderText">
+         <string>Type Message Here</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btn_send_sms">
+        <property name="geometry">
+         <rect>
+          <x>640</x>
+          <y>400</y>
+          <width>191</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>15</pointsize>
+          <weight>9</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 75 15pt &quot;Comic Sans MS&quot;;
+background-color: rgb(255, 170, 127);</string>
+        </property>
+        <property name="text">
+         <string>Send Message</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_email">
+       <attribute name="title">
+        <string>         Email          </string>
+       </attribute>
+       <widget class="QListWidget" name="list_email_contacts">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>40</y>
+          <width>371</width>
+          <height>471</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(238, 238, 238);</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="mailID_area">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>40</y>
+          <width>601</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(238, 238, 238);</string>
+        </property>
+        <property name="placeholderText">
+         <string>To  :    Email  ID  Here</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="mail_area">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>100</y>
+          <width>601</width>
+          <height>321</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>15</pointsize>
+          <weight>9</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(238, 238, 238);</string>
+        </property>
+        <property name="placeholderText">
+         <string>Type your Mail Here</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btn_send_email">
+        <property name="geometry">
+         <rect>
+          <x>630</x>
+          <y>440</y>
+          <width>191</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>15</pointsize>
+          <weight>9</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 75 15pt &quot;Comic Sans MS&quot;;
+background-color: rgb(255, 170, 127);</string>
+        </property>
+        <property name="text">
+         <string>Send Mail</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
