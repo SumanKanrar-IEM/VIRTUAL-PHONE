@@ -99,6 +99,10 @@ class Weather_class(weather_non_exec.Ui_weather_screen, QtWidgets.QWidget):
             pixmap = QtGui.QPixmap('rainy.png')
             self.weather_image.setPixmap(pixmap)
             self.weather_image.setScaledContents(True)
+        elif str(sky_condition) == 'mist':
+            pixmap = QtGui.QPixmap('mist.png')
+            self.weather_image.setPixmap(pixmap)
+            self.weather_image.setScaledContents(True)
         else:
             pixmap = QtGui.QPixmap('sunny.png')
             self.weather_image.setPixmap(pixmap)
