@@ -61,7 +61,7 @@ class addcontact_class(addcontact_non_exec.Ui_Form, QtWidgets.QWidget):
         # print(self.email_lineEdit.text())
         # print(self.address_textEdit.toPlainText())
         # print(self.dob_dateEdit.date().toString('dd/MM/yyyy'))
-        with open('backup_contacts.csv', 'a', newline='') as f:
+        with open('contacts.csv', 'a', newline='') as f:
             writer = csv.writer(f)
             writer.writerow([self.name_lineEdit.text(), self.phone_lineEdit.text(), self.email_lineEdit.text(), self.address_textEdit.toPlainText(), self.dob_dateEdit.date().toString('dd-MM-yyyy')])
 

@@ -8,9 +8,9 @@ mail.ehlo()
 mail.starttls()
 #password = f.open('mail_password.txt')
 
-for line in open('mail_password.txt'):
-     mail.login('sumankanrar420@gmail.com', line)
+for line in open('mail_password.txt'):  #put password in a text file and save in same folder
+     mail.login('urmailid@gmail.com', line)  #put ur mail id
 
-mail.sendmail('sumankanrar420@gmail.com','sumankanrar25@gmail.com',content)
+mail.sendmail('urmailid@gmail.com','sumankanrar25@gmail.com',content) #put ur mail id 
 
 mail.close()

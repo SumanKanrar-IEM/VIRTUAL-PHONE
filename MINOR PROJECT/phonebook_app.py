@@ -91,18 +91,15 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
         vmsg_recipient = "+91" + str(self.phonenumber)
         print(vmsg_recipient)
 
-        #URL = "https://sites.google.com/site/infotricks1on1/home/SampleAudio_0.5mb.mp3?attredirects=0&d=1.mp3"
+        '''Provide proper account details from twilio.com after creating an account'''
 
-        account_sid = "AC4e9647745ad74b4b505ae89084eda74b"
-        auth_token = "f8c22ad19cb744fd5b36e835c983211d"
-
-        # alternate account_sid = "ACcbd1807fccb261db8b7d18f0983b412b"
-        # alternate auth-token = "0da34ba8de62e3d7fa45fc7f92926e15"
-        # alternate phone number = "+13203320575"
+        # alternate account_sid = "Ccbd1807fccb261db8b7d18f0983b412b"
+        # alternate auth-token = "da34ba8de62e3d7fa45fc7f92926e15"
+        # alternate phone number = "+3203320575"
 
         client = Client(account_sid, auth_token)
 
-        call = client.calls.create(to= vmsg_recipient, from_="+19124175695", url= self.URL)
+        call = client.calls.create(to= vmsg_recipient, from_="+1914175695", url= self.URL)
         print(call.sid)
         self.list_vmsg_audios.setDisabled(True)
 
@@ -114,27 +111,11 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
         jession_id = ''
         opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cookies))
 
-        # sms_recipient = "+91" + str(self.recipient_number)
-        # print(sms_recipient)
-        #
-        # account_sid = "AC4e9647745ad74b4b505ae89084eda74b"
-        # auth_token = "f8c22ad19cb744fd5b36e835c983211d"
-
-        # alternate account_sid = "ACcbd1807fccb261db8b7d18f0983b412b"
-        # alternate auth-token = "0da34ba8de62e3d7fa45fc7f92926e15"
-        # alternate phone number = "+13203320575"
-
-        # client = Client(account_sid, auth_token)
-        #
-        # message = client.messages.create(body= self.sms_area.toPlainText(), to=sms_recipient, from_="+19124175695")
-        # text message
-        #print(message.sid)
-
         message = self.sms_area.toPlainText()
         recipient = self.recipient_number
         print(recipient)
-        usr = '9163149163'
-        password = 'rockingsumankanrarro'
+        usr = #give your way2sms username
+        password = #Give the respective password
 
         login_url = 'http://site24.way2sms.com/Login1.action?'
         params = {'username': usr, 'password': password}
@@ -191,25 +172,12 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
         mail.starttls()
         # password = f.open('mail_password.txt')
 
-        for line in open('mail_password.txt'):
-            mail.login('sumankanrar420@gmail.com', line)
+        for line in open('mail_password.txt'):  #put the password in a text file in the same folder
+            mail.login('urmailid@gmail.com', line) #put your owm mail id 
 
-        mail.sendmail('sumankanrar420@gmail.com', self.mail_id, content)
+        mail.sendmail('urmailid@gmail.com', self.mail_id, content)
 
         mail.close()
-        # mail = smtplib.SMTP('smtp.gmail.com', 587)
-        #
-        # mail.ehlo()
-        #
-        # mail.starttls()
-        # # password = f.open('mail_password.txt')
-        #
-        # for line in open('mail_password.txt'):
-        #     mail.login('sumankanrar420@gmail.com', line)
-        #
-        # mail.sendmail('sumankanrar420@gmail.com', self.mail_id, content)
-        #
-        # mail.close()
 
         print("Successfully sent")
         self.mail_area.clear()
