@@ -2,12 +2,19 @@ import sys
 import os
 from twilio.rest import Client
 import smtplib
+import urllib
+import requests
+import http.cookiejar
 from PyQt5 import QtCore, QtGui, QtWidgets
 import phonebook_non_exec
 import addcontact_app
 from addcontact_app import addcontact_class
 from PyQt5.QtWidgets import QFileDialog, QTableWidgetItem, QTableWidget, QMessageBox
 import csv
+
+
+
+
 class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
 
     audios_list = []
@@ -103,29 +110,79 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
 
     def send_sms(self):
 
-        sms_recipient = "+91" + str(self.recipient_number)
-        print(sms_recipient)
+        cookies = http.cookiejar.CookieJar()
+        jession_id = ''
+        opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cookies))
 
-        account_sid = "AC4e9647745ad74b4b505ae89084eda74b"
-        auth_token = "f8c22ad19cb744fd5b36e835c983211d"
+        # sms_recipient = "+91" + str(self.recipient_number)
+        # print(sms_recipient)
+        #
+        # account_sid = "AC4e9647745ad74b4b505ae89084eda74b"
+        # auth_token = "f8c22ad19cb744fd5b36e835c983211d"
 
         # alternate account_sid = "ACcbd1807fccb261db8b7d18f0983b412b"
         # alternate auth-token = "0da34ba8de62e3d7fa45fc7f92926e15"
         # alternate phone number = "+13203320575"
 
-        client = Client(account_sid, auth_token)
-
-        message = client.messages.create(body= self.sms_area.toPlainText(), to=sms_recipient, from_="+19124175695")
+        # client = Client(account_sid, auth_token)
+        #
+        # message = client.messages.create(body= self.sms_area.toPlainText(), to=sms_recipient, from_="+19124175695")
         # text message
-        print(message.sid)
+        #print(message.sid)
+
+        message = self.sms_area.toPlainText()
+        recipient = self.recipient_number
+        print(recipient)
+        usr = '9163149163'
+        password = 'rockingsumankanrarro'
+
+        login_url = 'http://site24.way2sms.com/Login1.action?'
+        params = {'username': usr, 'password': password}
+        params = urllib.parse.urlencode(params).encode("utf-8")
+
+        headers = [('User-Agent', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64')]
+        opener.addheaders = headers
+        try:
+            opener.open(login_url, params)
+        except IOError:
+            pass
+        else:
+            print("\nLogin Succesful...")
+
+        jession_id = str(cookies).split('~')[1].split(' ')[0]
+
+        sms_url = 'http://site24.way2sms.com/smstoss.action?'
+
+        sms_data = {'ssaction': 'ss', 'Token': jession_id, 'mobile': recipient, 'message': message, 'msgLen': 0}
+
+        headers = [('Referer', 'http://site25.way2sms.com/sendSMS?Token=' + jession_id)]
+
+        sms_data = urllib.parse.urlencode(sms_data).encode("utf-8")
+
+        opener.addheaders = headers
+        try:
+            sms_page = opener.open(sms_url, sms_data)
+        except IOError:
+            pass
+        else:
+            if b'Message has been submitted successfully' in sms_page.read():
+                print('Message has been submitted successfully')
+            else:
+                print('Sms Sending Failed')
+
+
+
+
         self.sms_area.clear()
         self.sms_area.setDisabled(True)
 
 
 
 
+
     def send_mail(self):
         print("Send Email button clicked")
+
         content = self.mail_area.toPlainText()
         mail = smtplib.SMTP('smtp.gmail.com', 587)
 
@@ -140,6 +197,19 @@ class Phonebook_class(phonebook_non_exec.Ui_Dialog, QtWidgets.QDialog):
         mail.sendmail('sumankanrar420@gmail.com', self.mail_id, content)
 
         mail.close()
+        # mail = smtplib.SMTP('smtp.gmail.com', 587)
+        #
+        # mail.ehlo()
+        #
+        # mail.starttls()
+        # # password = f.open('mail_password.txt')
+        #
+        # for line in open('mail_password.txt'):
+        #     mail.login('sumankanrar420@gmail.com', line)
+        #
+        # mail.sendmail('sumankanrar420@gmail.com', self.mail_id, content)
+        #
+        # mail.close()
 
         print("Successfully sent")
         self.mail_area.clear()

@@ -43,8 +43,8 @@ def send_sms(message, receipent):
         else:
             print('Sms Sending Failed')
 
-user=input("Enter username: ")
-password=input("Enter password: ")
+user='9163149163'
+password='rockingsumankanrarro'
 
 login(user, password)
 
